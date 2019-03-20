@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>my meme library</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+	<app></app>
+
+	<script src="./tags/app.tag" type="riot/tag"></script>
+	<script src="./tags/about.tag" type="riot/tag"></script>
+	<script src="./tags/menu.tag" type="riot/tag"></script>
+	<script src="./tags/admin.tag" type="riot/tag"></script>
+	<script src="./tags/admin_entry.tag" type="riot/tag"></script>
+	<!-- <script src="./tags/meme.tag" type="riot/tag"></script> -->
+	<script src="./tags/memes.tag" type="riot/tag"></script>
+
+
+	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
+	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+	<!-- Load Riot ROUTER scripts - Note that with Riot 3.0 the Router has become a standalone script that you must include separately like this. -->
+	<script src="https://cdn.jsdelivr.net/riot-route/3.0/route.min.js"></script>
+
+	<script>
+		riot.mount('*');
+	</script>
+</body>
+
+</html>
