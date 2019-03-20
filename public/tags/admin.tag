@@ -4,7 +4,7 @@
   		<input type="text" ref="captionEl" placeholder="Enter caption">
       <input type="text" ref="funnyEl" placeholder="Enter funness (0 to 5)">
 
-  		<button type="button" onclick={ addMeme }>Add Meme</button>
+  		<button type="button" onclick={ saveMeme }>Add Meme</button>
   	</div>
 
   	<div show={ myMemes.length == 0 }>
@@ -16,7 +16,10 @@
 
   	<script>
   		//console.log(this);
-  		var that = this;
+  		var tag = this;
+
+      //prepare to push into memes subdirectory in our database
+      var messagesRef = rootRef.child('/memes');
 
   		this.myMemes = [
   		{
@@ -36,7 +39,6 @@
       }
   		];
 
-  		var that  =  this;
 
   		this.remove = function(event) {
   			console.log('EVENT:', event);
@@ -70,6 +72,15 @@
   			// RESET INPUTS this.refs.urlEl.value = "";
   			this.refs.captionEl.value = "";
   		};
+
+      this.saveMeme = function(){
+        var meme = {
+          url: this.refs.urlEl.value,
+          caption: this.refs.captionEl.value,
+          funness: this.refs.funnyEl.value
+        }
+        messagesRef.push(msg);
+      }
   	</script>
 
   	<style>
