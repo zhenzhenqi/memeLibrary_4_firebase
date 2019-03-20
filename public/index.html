@@ -17,6 +17,7 @@
 	<script src="./tags/admin.tag" type="riot/tag"></script>
 	<script src="./tags/admin_entry.tag" type="riot/tag"></script>
 	<script src="./tags/memes.tag" type="riot/tag"></script>
+	<script src="./tags/meme.tag" type="riot/tag"></script>
 
 	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/riot-route/3.0/route.min.js"></script>
@@ -42,6 +43,7 @@
 		//step one: it's a common practice to get the reference to the root of the database
 		var rootRef = database.ref('/');
 
+		var observable = riot.observable();
 		riot.mount('*');
 	</script>
 

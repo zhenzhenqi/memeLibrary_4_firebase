@@ -60,6 +60,8 @@
       }
       // console.log("myMemes", tag.myMemes);
       tag.myMemes = tempData;
+      observable.trigger('updateMemes', tempData);
+
       tag.update();
     });
   </script>
